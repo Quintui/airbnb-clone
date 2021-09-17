@@ -4,6 +4,8 @@ import { Banner } from "../components/Banner";
 import React, { FC } from "react";
 import { SmallCard } from "../components/SmallCard";
 import MediumCard from "../components/MediumCard";
+import { LargeCard } from "../components/LargeCard";
+import { Footer } from "../components/Footer";
 
 export type ExploreData = {
 	img: string;
@@ -50,7 +52,20 @@ const Home: FC<Props> = ({ exploreData, liveAnywhereData }) => {
 						))}
 					</div>
 				</section>
+
+				{/* The Greatest Outdoors */}
+				<section className="mt-5 mb-20">
+					<LargeCard
+						title="The Greatest Outdoors"
+						description="Wishlist curated by Airbnb"
+						buttonText="Get Inspired"
+						img="https://links.papareact.com/4cj"
+					/>
+				</section>
 			</main>
+
+			{/* Footer */}
+			<Footer />
 		</div>
 	);
 };
