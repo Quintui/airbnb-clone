@@ -27,3 +27,6 @@ yarn create next-app --example with-tailwindcss with-tailwindcss-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+
+[Link to the project](https://airbnb-clone-i7g0q1kf8-quintui.vercel.app/)
