@@ -27,12 +27,13 @@ const Home: FC<Props> = ({ exploreData }) => {
 			<main className="max-w-7xl mx-auto px-8 sm:px-16 mt-6">
 				<section>
 					<h2 className="text-3xl sm:text-4xl font-semibold pb-5">Explore Nearby</h2>
-					{/* Pull some data from API */}
-					{exploreData?.map(({ distance, img, location }) => (
-						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5">
+						{/* Pull some data from API */}
+						{exploreData?.map(({ distance, img, location }) => (
 							<SmallCard key={img} distance={distance} location={location} img={img} />
-						</div>
-					))}
+						))}
+					</div>
 				</section>
 			</main>
 		</div>
