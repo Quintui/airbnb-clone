@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { GlobeAltIcon, MenuIcon, SearchIcon, UserCircleIcon } from "@heroicons/react/solid";
 export const Header = () => {
@@ -21,12 +20,14 @@ export const Header = () => {
 					placeholder="Start your search"
 					className="bg-transparent outline-none pl-3 flex-grow placeholder-grey-400 "
 				/>
-				<SearchIcon className="hidden md:inline h-8 bg-red-400 md:none rounded-full p-2 mx-2 text-white" />
+				<SearchIcon className="hidden md:inline h-8 bg-red-400 md:none rounded-full p-2 mx-2 text-white cursor-pointer" />
 			</div>
 
 			{/* Right side */}
 			<div className="flex items-center my-auto space-x-4 justify-end text-gray-500">
-				<p className="hidden md:inline-flex cursor-pointer ">Become a host </p>
+				<p className="hidden md:inline-flex cursor-pointer hover:bg-gray-100 px-5 py-3 transition duration-150 ease-out rounded-full ">
+					Become a host
+				</p>
 				<GlobeAltIcon className=" hidden md:inline-flex h-6 cursor-pointer" />
 				<div className="rounded-full border-2 flex space-x-2 p-2">
 					<MenuIcon className="h-6 cursor-pointer" />

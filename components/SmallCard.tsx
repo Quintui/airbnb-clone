@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { ExploreData } from "../pages";
 import Image from "next/image";
 

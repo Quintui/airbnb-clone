@@ -1,20 +1,26 @@
 import Head from "next/head";
 import { Header } from "../components/Header";
 import { Banner } from "../components/Banner";
-import { FC } from "react";
+import React, { FC } from "react";
 import { SmallCard } from "../components/SmallCard";
+import MediumCard from "../components/MediumCard";
 
 export type ExploreData = {
 	img: string;
 	location: string;
 	distance: string;
 };
+export type LiveAnywhereData = {
+	img: string;
+	title: string;
+};
 
 interface Props {
 	exploreData: ExploreData[];
+	liveAnywhereData: LiveAnywhereData[];
 }
 
-const Home: FC<Props> = ({ exploreData }) => {
+const Home: FC<Props> = ({ exploreData, liveAnywhereData }) => {
 	return (
 		<div>
 			<Head>
@@ -23,15 +29,24 @@ const Home: FC<Props> = ({ exploreData }) => {
 			</Head>
 			<Header />
 			<Banner />
-
 			<main className="max-w-7xl mx-auto px-8 sm:px-16 mt-6">
+				{/* Explore Nearby Section */}
 				<section>
 					<h2 className="text-3xl sm:text-4xl font-semibold pb-5">Explore Nearby</h2>
-
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 						{/* Pull some data from API */}
 						{exploreData?.map(({ distance, img, location }) => (
 							<SmallCard key={img} distance={distance} location={location} img={img} />
+						))}
+					</div>
+				</section>
+
+				{/* Live Anywhere Section */}
+				<section className="mt-5">
+					<h2 className="text-3xl sm:text-4xl font-semibold pb-5 ">Live Anywhere</h2>
+					<div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
+						{liveAnywhereData?.map(({ img, title }) => (
+							<MediumCard key={img} img={img} title={title} />
 						))}
 					</div>
 				</section>
@@ -46,9 +61,14 @@ export async function getStaticProps() {
 		res.json(),
 	);
 
+	const liveAnywhereData: LiveAnywhereData = await fetch("https://links.papareact.com/zp1").then(
+		(res) => res.json(),
+	);
+
 	return {
 		props: {
 			exploreData,
+			liveAnywhereData,
 		},
 	};
 }
