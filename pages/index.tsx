@@ -72,11 +72,11 @@ const Home: FC<Props> = ({ exploreData, liveAnywhereData }) => {
 export default Home;
 
 export async function getStaticProps() {
-	const exploreData: ExploreData = await fetch("https://links.papareact.com/pyp").then((res) =>
+	const exploreData: ExploreData[] = await fetch("https://links.papareact.com/pyp").then((res) =>
 		res.json(),
 	);
 
-	const liveAnywhereData: LiveAnywhereData = await fetch("https://links.papareact.com/zp1").then(
+	const liveAnywhereData: LiveAnywhereData[] = await fetch("https://links.papareact.com/zp1").then(
 		(res) => res.json(),
 	);
 

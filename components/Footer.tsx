@@ -6,35 +6,35 @@ export const Footer = () => {
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 max-w-7xl mx-auto px-8 sm:px-16 py-10  ">
 				<div className="space-y-4 test-xs text-gray-800 mb-5 md:mb-0">
 					<h5 className="font-bold">ABOUT</h5>
-					<p className="cursor-pointer hover:underline">How Airbnb works</p>
-					<p className="cursor-pointer hover:underline"> Newsrooms</p>
-					<p className="cursor-pointer hover:underline">Investors</p>
-					<p className="cursor-pointer hover:underline">Airbnb Plus</p>
-					<p className="cursor-pointer hover:underline">Airbnb Luxe</p>
+					<p className="footer-button">How Airbnb works</p>
+					<p className="footer-button"> Newsrooms</p>
+					<p className="footer-button">Investors</p>
+					<p className="footer-button">Airbnb Plus</p>
+					<p className="footer-button">Airbnb Luxe</p>
 				</div>
 				<div className="space-y-4 test-xs text-gray-800 mb-5 md:mb-0">
 					<h5 className="font-bold">COMMUNITY</h5>
-					<p className="cursor-pointer hover:underline">Accessibility</p>
-					<p className="cursor-pointer hover:underline"> This is not a real site</p>
-					<p className="cursor-pointer hover:underline"> Its a pretty awesome clone</p>
-					<p className="cursor-pointer hover:underline">Referrals accepted</p>
-					<p className="cursor-pointer hover:underline">Referrals accepted</p>
+					<p className="footer-button">Accessibility</p>
+					<p className="footer-button"> This is not a real site</p>
+					<p className="footer-button"> Its a pretty awesome clone</p>
+					<p className="footer-button">Referrals accepted</p>
+					<p className="footer-button">Referrals accepted</p>
 				</div>
 				<div className="space-y-4 test-xs text-gray-800 mb-5 md:mb-0">
 					<h5 className="font-bold">HOST</h5>
-					<p className="cursor-pointer hover:underline">Host your home</p>
-					<p className="cursor-pointer hover:underline">Host an Online Experience </p>
-					<p className="cursor-pointer hover:underline">Host an Experience</p>
-					<p className="cursor-pointer hover:underline">Responsible hosting </p>
-					<p className="cursor-pointer hover:underline">Resource Center</p>
+					<p className="footer-button">Host your home</p>
+					<p className="footer-button">Host an Online Experience </p>
+					<p className="footer-button">Host an Experience</p>
+					<p className="footer-button">Responsible hosting </p>
+					<p className="footer-button">Resource Center</p>
 				</div>
 				<div className="space-y-4 test-xs text-gray-800 mb-5 md:mb-0">
 					<h5 className="font-bold">SUPPORT</h5>
-					<p className="cursor-pointer hover:underline">Our COVID-19 Response</p>
-					<p className="cursor-pointer hover:underline">Help Center </p>
-					<p className="cursor-pointer hover:underline">Cancellation options </p>
-					<p className="cursor-pointer hover:underline">Neighborhood Support </p>
-					<p className="cursor-pointer hover:underline">Trust & Safety</p>
+					<p className="footer-button">Our COVID-19 Response</p>
+					<p className="footer-button">Help Center </p>
+					<p className="footer-button">Cancellation options </p>
+					<p className="footer-button">Neighborhood Support </p>
+					<p className="footer-button">Trust & Safety</p>
 				</div>
 			</div>
 		</footer>
