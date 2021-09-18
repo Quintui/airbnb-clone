@@ -1,3 +1,3 @@
 # Next.js + Tailwind CSS AirBnb Clone
 
-[Link to the project](airbnb-clone-kohl-nu.vercel.app)
+[Link to the project](https://airbnb-clone-kohl-nu.vercel.app)
