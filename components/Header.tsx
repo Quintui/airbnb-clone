@@ -1,6 +1,33 @@
 import Image from "next/image";
 import { GlobeAltIcon, MenuIcon, SearchIcon, UserCircleIcon } from "@heroicons/react/solid";
+import { useState } from "react";
+import { DateRangePicker } from "react-date-range";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+
+type RangesType = {
+	selection: {
+		startDate: Date;
+		endDate: Date;
+		key: string;
+	};
+};
+
 export const Header = () => {
+	const [inputValue, setInputValue] = useState("");
+	const [startDate, setStartDate] = useState(new Date());
+	const [endDate, setEndDate] = useState(new Date());
+
+	const selectionRange = {
+		startDate: startDate,
+		endDate: endDate,
+		key: "selection",
+	};
+
+	const handleSelect = (ranges: RangesType) => {
+		setStartDate(ranges.selection.startDate);
+		setEndDate(ranges.selection.endDate);
+	};
 	return (
 		<header className="sticky top-0 z-50 grid grid-cols-2 sm:grid-cols-3 bg-white shadow-md p-5 ">
 			{/* Left side */}
@@ -18,6 +45,8 @@ export const Header = () => {
 				<input
 					type="text"
 					placeholder="Start your search"
+					value={inputValue}
+					onChange={(e) => setInputValue(e.target.value)}
 					className="bg-transparent outline-none pl-3 flex-grow placeholder-grey-400 "
 				/>
 				<SearchIcon className="hidden md:inline h-8 bg-red-400 md:none rounded-full p-2 mx-2 text-white cursor-pointer" />
@@ -34,6 +63,16 @@ export const Header = () => {
 					<UserCircleIcon className="h-6 cursor-pointer" />
 				</div>
 			</div>
+
+			{inputValue && (
+				<div className="flex flex-col col-span-3 mx-auto mt-5">
+					<DateRangePicker
+						rangeColors={["#FD5B61"]}
+						ranges={[selectionRange]}
+						onChange={handleSelect}
+					/>
+				</div>
+			)}
 		</header>
 	);
 };

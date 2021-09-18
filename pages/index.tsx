@@ -31,10 +31,10 @@ const Home: FC<Props> = ({ exploreData, liveAnywhereData }) => {
 			</Head>
 			<Header />
 			<Banner />
-			<main className="max-w-7xl mx-auto px-8 sm:px-16 mt-6">
+			<main className="max-w-7xl mx-auto px-8 sm:px-16 mt-10">
 				{/* Explore Nearby Section */}
-				<section>
-					<h2 className="text-3xl sm:text-4xl font-semibold pb-5">Explore Nearby</h2>
+				<section className="mt-10">
+					<h2 className="text-3xl sm:text-4xl font-bold pb-5">Explore Nearby</h2>
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 						{/* Pull some data from API */}
 						{exploreData?.map(({ distance, img, location }) => (
@@ -44,8 +44,8 @@ const Home: FC<Props> = ({ exploreData, liveAnywhereData }) => {
 				</section>
 
 				{/* Live Anywhere Section */}
-				<section className="mt-5">
-					<h2 className="text-3xl sm:text-4xl font-semibold pb-5 ">Live Anywhere</h2>
+				<section className="mt-10">
+					<h2 className="text-3xl sm:text-4xl font-bold pb-5 ">Live Anywhere</h2>
 					<div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
 						{liveAnywhereData?.map(({ img, title }) => (
 							<MediumCard key={img} img={img} title={title} />
