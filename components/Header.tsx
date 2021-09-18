@@ -75,7 +75,7 @@ export const Header: FC<Props> = ({ placeholder }) => {
 					placeholder={placeholder || "Start your search"}
 					value={inputValue}
 					onChange={(e) => setInputValue(e.target.value)}
-					className="bg-transparent outline-none pl-3 flex-grow placeholder-grey-400 "
+					className="bg-transparent outline-none pl-6 flex-grow placeholder-grey-400 "
 				/>
 				<SearchIcon className="hidden md:inline h-8 bg-red-400 md:none rounded-full p-2 mx-2 text-white cursor-pointer" />
 			</div>

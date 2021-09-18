@@ -4,6 +4,7 @@ import React, { FC } from "react";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { InfoCard } from "../components/InfoCard";
+import { MapComponent } from "../components/Map";
 
 export type SearchResultType = {
 	img: string;
@@ -38,27 +39,33 @@ const Search: FC<Props> = ({ searchResult }) => {
 	return (
 		<div>
 			<Header placeholder={`${location} | ${daysRange} | ${noOfGuests} guests`} />
-			<main className="my-10 mx-6">
-				<section>
-					<p className="text-xs text-gray-400 mb-3">
-						300+ stays - {daysRange} for {noOfGuests} {noOfGuests === "1" ? "guest" : "guests"}
-					</p>
-					<h1 className="text-2xl font-semibold mb-5">Stays in {location}</h1>
-				</section>
-				<div className=" hidden md:inline-flex space-x-4 mb-8">
-					<button className="button">Cancellation Flexibility</button>
-					<button className="button"> Type of place</button>
-					<button className="button"> Price</button>
-					<button className="button">Room and Beds</button>
-					<button className="button">More Filters</button>
-				</div>
+			<main className="my-10 mx-6 flex">
+				<div className="flex-grow mr-5">
+					<section>
+						<p className="text-xs text-gray-400 mb-3">
+							300+ stays - {daysRange} for {noOfGuests} {noOfGuests === "1" ? "guest" : "guests"}
+						</p>
+						<h1 className="text-3xl font-semibold mb-5">Stays in {location}</h1>
+					</section>
+					<div className=" hidden md:inline-flex space-x-4 mb-8">
+						<button className="button">Cancellation Flexibility</button>
+						<button className="button"> Type of place</button>
+						<button className="button"> Price</button>
+						<button className="button">Room and Beds</button>
+						<button className="button">More Filters</button>
+					</div>
 
-				<div>
-					{searchResult?.map((item) => (
-						<InfoCard {...item} key={item.img} />
-					))}
+					<div>
+						{searchResult?.map((item) => (
+							<InfoCard {...item} key={item.img} />
+						))}
+					</div>
+				</div>
+				<div className="hidden xl:inline-flex  xl:min-w-[800px] ">
+					<MapComponent searchResult={searchResult} />
 				</div>
 			</main>
+
 			<Footer />
 		</div>
 	);
