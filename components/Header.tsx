@@ -17,6 +17,7 @@ export const Header = () => {
 	const [inputValue, setInputValue] = useState("");
 	const [startDate, setStartDate] = useState(new Date());
 	const [endDate, setEndDate] = useState(new Date());
+	const [noOfGuests, setNoOfGuests] = useState("1");
 
 	const selectionRange = {
 		startDate: startDate,
@@ -71,6 +72,16 @@ export const Header = () => {
 						ranges={[selectionRange]}
 						onChange={handleSelect}
 					/>
+
+					<div>
+						<h2>Number of Guests</h2>
+						<input
+							type="number"
+							value={noOfGuests}
+							onChange={(e) => setNoOfGuests(e.target.value)}
+							min="1"
+						/>
+					</div>
 				</div>
 			)}
 		</header>
