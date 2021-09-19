@@ -43,15 +43,19 @@ export const Header: FC<Props> = ({ placeholder }) => {
 	};
 
 	const search = () => {
-		router.push({
-			pathname: "search",
-			query: {
-				startDate: startDate.toString(),
-				endDate: endDate.toString(),
-				location: inputValue,
-				noOfGuests,
-			},
-		});
+		if (inputValue) {
+			router.push({
+				pathname: "search",
+				query: {
+					startDate: startDate.toString(),
+					endDate: endDate.toString(),
+					location: inputValue,
+					noOfGuests,
+				},
+			});
+		} else {
+			return;
+		}
 	};
 
 	return (
@@ -77,7 +81,10 @@ export const Header: FC<Props> = ({ placeholder }) => {
 					onChange={(e) => setInputValue(e.target.value)}
 					className="bg-transparent outline-none pl-6 flex-grow placeholder-grey-400 "
 				/>
-				<SearchIcon className="hidden md:inline h-8 bg-red-400 md:none rounded-full p-2 mx-2 text-white cursor-pointer" />
+				<SearchIcon
+					onClick={search}
+					className="hidden md:inline h-8 bg-red-400 md:none rounded-full p-2 mx-2 text-white cursor-pointer"
+				/>
 			</div>
 
 			{/* Right side */}

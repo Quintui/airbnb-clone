@@ -61,7 +61,7 @@ const Search: FC<Props> = ({ searchResult }) => {
 						))}
 					</div>
 				</div>
-				<div className="hidden xl:inline-flex  xl:min-w-[800px] ">
+				<div className="hidden xl:inline-flex  xl:min-w-[600px] ">
 					<MapComponent searchResult={searchResult} />
 				</div>
 			</main>

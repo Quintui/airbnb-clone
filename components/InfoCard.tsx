@@ -15,11 +15,11 @@ export const InfoCard: FC<SearchResultType> = ({
 	title,
 }) => {
 	return (
-		<section className="flex border-b py-7 px-4 rounded-md cursor-pointer hover:opacity-95 hover:shadow-lg transition duration-250 first:border-t ">
-			<div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
+		<section className="flex flex-col sm:flex-row border-b py-7 px-4 rounded-md cursor-pointer hover:opacity-95 hover:shadow-lg transition duration-250 first:border-t ">
+			<div className=" mb-2 w-[100%] sm:mb-0 relative h-24  sm:h-52 sm:w-80 flex-shrink-0">
 				<Image src={img} objectFit="cover" layout="fill" className="rounded-xl" />
 			</div>
-			<div className=" ml-4 flex flex-col flex-grow">
+			<div className=" sm:ml-4 flex flex-col flex-grow">
 				<div className="flex-grow ">
 					<div className="flex justify-between">
 						<p>{location}</p>
