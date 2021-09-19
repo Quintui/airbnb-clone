@@ -6,7 +6,7 @@
 
 ### Usage Guide ;)
 
-* Type to search input for example **London**
+* Enter input to search, for example, **London**
 * Select Date
 * Select count of guests
 * Click the Search button
