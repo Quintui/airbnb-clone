@@ -105,6 +105,7 @@ export const Header: FC<Props> = ({ placeholder }) => {
 						rangeColors={["#FD5B61"]}
 						ranges={[selectionRange]}
 						onChange={handleSelect}
+						minDate={new Date()}
 					/>
 
 					<div className="flex justify-between border-b pb-2 mb-3 items-center">
